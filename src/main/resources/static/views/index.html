@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Main Page</title>
+</head>
+<body ng-app="parking">
+	<hr />
+	<div class="container" ng-controller="ParkingController">
+		<div class="row">
+			<label>Vehicle Number</label> <input type="text"
+				ng-model="vehicleNumber" class="input-sm spacing" /> <label>Vehicle
+				Type</label> <input type="text" ng-model="vehicleType" ng-list
+				class="input-sm custom-width spacing"
+				placeholder="Type SMALL or MEDIUM or LARGE" />
+			<button ng-click="generateTicket()" class="btn btn-sm btn-info">Generate
+				Ticket</button>
+		</div>
+		<hr />
+		<div class="row">
+			<div class="">
+				<h3>Ticket Details -</h3>
+				<span class="spacing">{{res_data}}</span>
+			</div>
+		</div>
+		<hr />
+		<div class="row">
+			<label>Ticket ID</label> <input type="text" ng-model="ticketId"
+				class="input-sm spacing" />
+			<button ng-click="generatePrice()" class="btn btn-sm btn-info">Get
+				Price</button>
+			<div class="">
+				<h3>Price Details -</h3>
+				<span class="spacing">Rs. {{price_res_data}}/- INR</span>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="js/lib/angular.min.js"></script>
+<script src="js/lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
+<script src="js/app/app.js"></script>
+<script src="js/app/ParkingController.js"></script>
+<script src="js/app/ParkingService.js"></script>
+<link rel="stylesheet" href="css/lib/bootstrap.min.css" />
+<link rel="stylesheet" href="css/app/app.css" />
+</html>
